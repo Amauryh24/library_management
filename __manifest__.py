@@ -5,6 +5,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/library_book_view.xml',
+        'views/library_book_category_view.xml',
         'views/library_menu_view.xml',
     ]
 }

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="library_management_menu" name="Library Management">
-        <menuitem id="library_book_menu" name="Books" action="library_book_action"></menuitem>
-    </menuitem>
+    <menuitem id="library_management_menu" name="Library">
+        <menuitem id="library_book_menu" name="Books" action="library_book_action">
+        </menuitem>
 
+        <menuitem id="configuration_menu" name="Configuration">
+            <menuitem id="library_book_category_menu" name="Category" action="library_book_category_action"/>
+        </menuitem>
+    </menuitem>
 </odoo>
