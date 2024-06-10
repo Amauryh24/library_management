@@ -6,7 +6,6 @@ class LibraryBook(models.Model):
     _description = 'Library Book'
 
     name = fields.Char(string='Title', required=True)
-    author = fields.Char(string='Author')
     isbn = fields.Integer()
 
     # Borrowed  -> when another user has the book
@@ -18,5 +17,5 @@ class LibraryBook(models.Model):
     ], string='Status', default='available')
 
     owner_id = fields.Many2one('res.users', string="Owner", default=lambda self: self.env.user)
-    category_id = fields.Many2one('library.book.category')
+    category_ids = fields.Many2many('library.book.category')
     author_id = fields.Many2one('library.book.author')
