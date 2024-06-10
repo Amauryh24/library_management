@@ -17,4 +17,4 @@ class Book(models.Model):
         ('traveling', 'Traveling')
     ], string='Status', default='available')
 
-    owner_id = fields.Many2one('res.users', string="Salesman", default=lambda self: self.env.user)
+    owner_id = fields.Many2one('res.users', string="Owner", default=lambda self: self.env.user)
