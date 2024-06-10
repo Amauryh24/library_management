@@ -6,6 +6,7 @@
 
         <menuitem id="configuration_menu" name="Configuration">
             <menuitem id="library_book_category_menu" name="Category" action="library_book_category_action"/>
+            <menuitem id="library_book_author_menu" name="Author" action="library_book_author_action"/>
         </menuitem>
     </menuitem>
 </odoo>

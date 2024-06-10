@@ -18,3 +18,5 @@ class LibraryBook(models.Model):
     ], string='Status', default='available')
 
     owner_id = fields.Many2one('res.users', string="Owner", default=lambda self: self.env.user)
+    category_id = fields.Many2one('library.book.category')
+    author_id = fields.Many2one('library.book.author')
