@@ -12,7 +12,26 @@
         <field name="arch" type="xml">
             <tree >
                 <field name="name"/>
+                <field name="born_date" />
             </tree>
+        </field>
+    </record>
+
+    <record id="library_book_author_view_form" model="ir.ui.view">
+        <field name="name">library.book.author.form</field>
+        <field name="model">library.book.author</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="born_date" />
+                    </group>
+                    <group>
+                        <field name="image" widget="image"/>
+                    </group>
+                </group>
+            </form>
         </field>
     </record>
 </odoo>

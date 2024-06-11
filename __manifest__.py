@@ -2,6 +2,7 @@
     'name': "Library Management",
     'depends': ['base'],
     'application': True,
+    'version': '1.0.0',
     'data': [
         'security/ir.model.access.csv',
         'views/library_book_view.xml',
