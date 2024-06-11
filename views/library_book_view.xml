@@ -41,6 +41,11 @@
                                     <field name="isbn"/>
                                 </group>
                             </page>
+                            <page string="Borrow">
+                                <group>
+                                    <field name="author_id"/>
+                                </group>
+                            </page>
                         </notebook>
                     </group>
                 </sheet>

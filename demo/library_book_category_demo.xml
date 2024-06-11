@@ -1,0 +1,64 @@
+<odoo>
+    <data noupdate="1">
+        <record id='category_01' model='library.book.category'>
+            <field name='name'>Policier</field>
+        </record>
+        <record id='category_02' model='library.book.category'>
+            <field name='name'>Science-Fiction</field>
+        </record>
+        <record id='category_03' model='library.book.category'>
+            <field name='name'>Fantastique</field>
+        </record>
+        <record id='category_04' model='library.book.category'>
+            <field name='name'>Drame</field>
+        </record>
+        <record id='category_05' model='library.book.category'>
+            <field name='name'>Thriller</field>
+        </record>
+        <record id='category_06' model='library.book.category'>
+            <field name='name'>Biographie</field>
+        </record>
+        <record id='category_07' model='library.book.category'>
+            <field name='name'>Histoire</field>
+        </record>
+        <record id='category_08' model='library.book.category'>
+            <field name='name'>Poésie</field>
+        </record>
+        <record id='category_09' model='library.book.category'>
+            <field name='name'>Romance</field>
+        </record>
+        <record id='category_10' model='library.book.category'>
+            <field name='name'>Aventure</field>
+        </record>
+        <record id='category_11' model='library.book.category'>
+            <field name='name'>Classique</field>
+        </record>
+        <record id='category_12' model='library.book.category'>
+            <field name='name'>Contemporain</field>
+        </record>
+        <record id='category_13' model='library.book.category'>
+            <field name='name'>Horreur</field>
+        </record>
+        <record id='category_14' model='library.book.category'>
+            <field name='name'>Comédie</field>
+        </record>
+        <record id='category_15' model='library.book.category'>
+            <field name='name'>Philosophie</field>
+        </record>
+        <record id='category_16' model='library.book.category'>
+            <field name='name'>Essai</field>
+        </record>
+        <record id='category_17' model='library.book.category'>
+            <field name='name'>Science</field>
+        </record>
+        <record id='category_18' model='library.book.category'>
+            <field name='name'>Politique</field>
+        </record>
+        <record id='category_19' model='library.book.category'>
+            <field name='name'>Religion</field>
+        </record>
+        <record id='category_20' model='library.book.category'>
+            <field name='name'>Art</field>
+        </record>
+    </data>
+</odoo>

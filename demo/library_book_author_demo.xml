@@ -1,0 +1,104 @@
+<odoo>
+    <!-- <data> noupdate="1" ??? -->
+    <data noupdate="1">
+        <record id='author_01' model='library.book.author'>
+            <field name='name'>Isaac Asimov</field>
+            <field name='born_date'>1920-01-02</field>
+            <field name='image' type="base64" file="library_management/static/img/author_01.webp"/>
+        </record>
+        <record id='author_02' model='library.book.author'>
+            <field name='name'>Arthur C. Clarke</field>
+            <field name='born_date'>1917-12-16</field>
+            <field name='image' type="base64" file="library_management/static/img/author_02.webp"/>
+        </record>
+        <record id='author_03' model='library.book.author'>
+            <field name='name'>Philip K. Dick</field>
+            <field name='born_date'>1928-12-16</field>
+            <field name='image' type="base64" file="library_management/static/img/author_03.webp"/>
+        </record>
+        <record id='author_04' model='library.book.author'>
+            <field name='name'>Ray Bradbury</field>
+            <field name='born_date'>1920-08-22</field>
+            <field name='image' type="base64" file="library_management/static/img/author_04.webp"/>
+        </record>
+        <record id='author_05' model='library.book.author'>
+            <field name='name'>H.G. Wells</field>
+            <field name='born_date'>1866-09-21</field>
+            <field name='image' type="base64" file="library_management/static/img/author_05.webp"/>
+        </record>
+        <record id='author_06' model='library.book.author'>
+            <field name='name'>Jules Verne</field>
+            <field name='born_date'>1828-02-08</field>
+            <field name='image' type="base64" file="library_management/static/img/author_06.webp"/>
+        </record>
+        <record id='author_07' model='library.book.author'>
+            <field name='name'>Frank Herbert</field>
+            <field name='born_date'>1920-10-08</field>
+            <field name='image' type="base64" file="library_management/static/img/author_07.webp"/>
+        </record>
+        <record id='author_08' model='library.book.author'>
+            <field name='name'>Robert A. Heinlein</field>
+            <field name='born_date'>1907-07-07</field>
+        </record>
+        <record id='author_09' model='library.book.author'>
+            <field name='name'>Ursula K. Le Guin</field>
+            <field name='born_date'>1929-10-21</field>
+            <field name='image' type="base64" file="library_management/static/img/author_09.webp"/>
+        </record>
+        <record id='author_10' model='library.book.author'>
+            <field name='name'>William Gibson</field>
+            <field name='born_date'>1948-03-17</field>
+            <field name='image' type="base64" file="library_management/static/img/author_10.webp"/>
+        </record>
+        <record id='author_11' model='library.book.author'>
+            <field name='name'>Orson Scott Card</field>
+            <field name='born_date'>1951-08-24</field>
+            <field name='image' type="base64" file="library_management/static/img/author_11.webp"/>
+        </record>
+        <record id='author_12' model='library.book.author'>
+            <field name='name'>George Orwell</field>
+            <field name='born_date'>1903-06-25</field>
+            <field name='image' type="base64" file="library_management/static/img/author_12.webp"/>
+        </record>
+        <record id='author_13' model='library.book.author'>
+            <field name='name'>Aldous Huxley</field>
+            <field name='born_date'>1894-07-26</field>
+            <field name='image' type="base64" file="library_management/static/img/author_13.webp"/>
+        </record>
+        <record id='author_14' model='library.book.author'>
+            <field name='name'>Kurt Vonnegut</field>
+            <field name='born_date'>1922-11-11</field>
+            <field name='image' type="base64" file="library_management/static/img/author_14.webp"/>
+        </record>
+        <record id='author_15' model='library.book.author'>
+            <field name='name'>Neal Stephenson</field>
+            <field name='born_date'>1959-10-31</field>
+            <field name='image' type="base64" file="library_management/static/img/author_15.webp"/>
+        </record>
+        <record id='author_16' model='library.book.author'>
+            <field name='name'>Margaret Atwood</field>
+            <field name='born_date'>1939-11-18</field>
+            <field name='image' type="base64" file="library_management/static/img/author_16.webp"/>
+        </record>
+        <record id='author_17' model='library.book.author'>
+            <field name='name'>China Miéville</field>
+            <field name='born_date'>1972-09-06</field>
+            <field name='image' type="base64" file="library_management/static/img/author_17.webp"/>
+        </record>
+        <record id='author_18' model='library.book.author'>
+            <field name='name'>Douglas Adams</field>
+            <field name='born_date'>1952-03-11</field>
+            <field name='image' type="base64" file="library_management/static/img/author_18.webp"/>
+        </record>
+        <record id='author_19' model='library.book.author'>
+            <field name='name'>Terry Pratchett</field>
+            <field name='born_date'>1948-04-28</field>
+            <field name='image' type="base64" file="library_management/static/img/author_19.webp"/>
+        </record>
+        <record id='author_20' model='library.book.author'>
+            <field name='name'>J.K. Rowling</field>
+            <field name='born_date'>1965-07-31</field>
+            <field name='image' type="base64" file="library_management/static/img/author_20.webp"/>
+        </record>
+    </data>
+</odoo>
