@@ -16,7 +16,7 @@
                 <field name="author_id"/>
                 <field name="category_ids" widget="many2many_tags"/>
                 <field name="isbn"/>
-                <field name="status"/>
+                <field name="state"/>
             </tree>
         </field>
     </record>
@@ -31,7 +31,7 @@
                     </h1>
                     <group>
                         <group>
-                            <field name="status"/>
+                            <field name="state"/>
                         </group>
                         <notebook>
                             <page string="Description">
@@ -41,9 +41,22 @@
                                     <field name="isbn"/>
                                 </group>
                             </page>
-                            <page string="Borrow">
+                            <page string="Borrowers">
                                 <group>
-                                    <field name="author_id"/>
+                                    <field name="borrow_ids">
+                                        <tree editable="bottom">
+                                            <field name="borrower_id"/>
+                                            <field name="borrow_date"/>
+                                            <field name="status"/>
+                                        </tree>
+                                        <form >
+                                            <group>
+                                                <field name="borrower_id"/>
+                                                <field name="borrow_date"/>
+                                                <field name="status"/>
+                                            </group>
+                                        </form>
+                                    </field>
                                 </group>
                             </page>
                         </notebook>

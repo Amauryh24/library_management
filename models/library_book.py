@@ -1,5 +1,6 @@
 from odoo import fields, models, api
 from odoo.exceptions import ValidationError
+
 # Information
 # status.borrowed  -> when another user has the book
 # status.travaling -> when the book is inside a book box
@@ -11,16 +12,18 @@ class LibraryBook(models.Model):
 
     name = fields.Char(string='Title', required=True, size=60)
     isbn = fields.Char(help='International Standard Book Number', size=17)
-
-    status = fields.Selection([
-        ('available', 'Available'),
-        ('borrowed', 'Borrowed'),
-        ('traveling', 'Traveling')
-    ], string='Status', default='available')
-
+    state = fields.Selection(
+        selection=[
+            ('unavailable', 'Unavailable'),
+            ('available', 'Available'),
+            ('borrowed', 'Borrowed'),
+            ('traveling', 'Traveling'),
+            ('lost', 'Lost')
+        ], string='State', default='available')
     owner_id = fields.Many2one('res.users', string="Owner", default=lambda self: self.env.user)
     category_ids = fields.Many2many('library.book.category')
     author_id = fields.Many2one('library.book.author')
+    borrow_ids = fields.One2many('library.book.borrow', 'book_id', string='Borrows')
 
     _sql_constraints = [
         ('unique_isbn', 'UNIQUE(isbn)', 'The ISBN must be unique'),
