@@ -32,6 +32,7 @@
                     <group>
                         <group>
                             <field name="state"/>
+                            <field name="borrower_id" />
                         </group>
                         <notebook>
                             <page string="Description">
@@ -47,6 +48,8 @@
                                         <tree editable="bottom">
                                             <field name="borrower_id"/>
                                             <field name="borrow_date"/>
+                                            <button name="action_set_status_accepted" string="Accepted" states="draft" type="object" icon="fa-check" invisible="status in 'accepted,refused'"/>
+                                            <button name="action_set_status_refused" string="Refused" states="draft" type="object" icon="fa-times" invisible="status in 'accepted,refused'" />
                                             <field name="status"/>
                                         </tree>
                                         <form >

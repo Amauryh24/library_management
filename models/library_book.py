@@ -2,8 +2,10 @@ from odoo import fields, models, api
 from odoo.exceptions import ValidationError
 
 # Information
-# status.borrowed  -> when another user has the book
-# status.travaling -> when the book is inside a book box
+# status.borrowed   -> when another user has the book
+# status.travaling  -> when the book is inside a book box
+# borrower_id       -> The owner accepted to borrow his book
+# borrow_ids        -> The borrowing request
 
 
 class LibraryBook(models.Model):
@@ -20,7 +22,9 @@ class LibraryBook(models.Model):
             ('traveling', 'Traveling'),
             ('lost', 'Lost')
         ], string='State', default='available')
+
     owner_id = fields.Many2one('res.users', string="Owner", default=lambda self: self.env.user)
+    borrower_id = fields.Many2one('res.partner', string="Borrower", copy=False, readonly=True)
     category_ids = fields.Many2many('library.book.category')
     author_id = fields.Many2one('library.book.author')
     borrow_ids = fields.One2many('library.book.borrow', 'book_id', string='Borrows')
