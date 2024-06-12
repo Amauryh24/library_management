@@ -18,10 +18,11 @@ class LibraryBook(models.Model):
         selection=[
             ('unavailable', 'Unavailable'),
             ('available', 'Available'),
-            ('borrowed', 'Borrowed'),
+            ('borrowing', 'Borrowing'),
             ('traveling', 'Traveling'),
             ('lost', 'Lost')
         ], string='State', default='available')
+    color = fields.Integer(string="Color")
 
     owner_id = fields.Many2one('res.users', string="Owner", default=lambda self: self.env.user)
     borrower_id = fields.Many2one('res.partner', string="Borrower", copy=False, readonly=True)
@@ -40,3 +41,8 @@ class LibraryBook(models.Model):
 
         if not self.isbn.replace('-', '').isdigit():
             raise ValidationError("The ISBN must be only digits.")
+
+    def action_set_available(self):
+        for record in self:
+            record.state = "available"
+        return True

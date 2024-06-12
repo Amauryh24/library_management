@@ -6,17 +6,32 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <record id="library_book_view_search" model="ir.ui.view">
+        <field name="name">library.book.search</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="owner_id" />
+                <field name="name"/>
+                <field name="author_id"/>
+                <field name="category_ids"/>
+                <field name="isbn" />
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
     <record id="library_book_view_tree" model="ir.ui.view">
         <field name="name">library.book.tree</field>
         <field name="model">library.book</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree decoration-success="state == 'available'" decoration-danger="state == 'lost'">
                 <field name="owner_id" />
                 <field name="name"/>
                 <field name="author_id"/>
-                <field name="category_ids" widget="many2many_tags"/>
-                <field name="isbn"/>
-                <field name="state"/>
+                <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color'}" />
+                <field name="isbn" optional="hide"/>
+                <field name="state" widget="badge" decoration-muted="state == 'unavailable'" decoration-success="state == 'available'" decoration-danger="state == 'lost'" decoration-info="state in 'borrowing,traveling'"/>
             </tree>
         </field>
     </record>
@@ -25,6 +40,10 @@
         <field name="model">library.book</field>
         <field name="arch" type="xml">
             <form string="Book">
+                <header>
+                    <button name="action_set_available" type="object" string="Available"/>
+                    <field name="state" widget="statusbar" statusbar_visible="unavailable,available,borrowing,traveling,lost" />
+                </header>
                 <sheet>
                     <h1>
                         <field name="name"/>
@@ -37,7 +56,7 @@
                         <notebook>
                             <page string="Description">
                                 <group>
-                                    <field name="category_ids" widget="many2many_tags"/>
+                                    <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                                     <field name="author_id"/>
                                     <field name="isbn"/>
                                 </group>
@@ -50,7 +69,7 @@
                                             <field name="borrow_date"/>
                                             <button name="action_set_status_accepted" string="Accepted" states="draft" type="object" icon="fa-check" invisible="status in 'accepted,refused'"/>
                                             <button name="action_set_status_refused" string="Refused" states="draft" type="object" icon="fa-times" invisible="status in 'accepted,refused'" />
-                                            <field name="status"/>
+                                            <field name="status" />
                                         </tree>
                                         <form >
                                             <group>

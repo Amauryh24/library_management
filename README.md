@@ -10,3 +10,4 @@ run the server odoo :
 ```
 python .\odoo-bin -r "your_odoo_name" -w "your_pwd" --addons-path=addons -d "odoo-db" -u library_management
 ```
+icon : https://spilymp.github.io/ibo/

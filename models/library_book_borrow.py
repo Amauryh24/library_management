@@ -25,7 +25,7 @@ class LibraryBookBorrow(models.Model):
 
             # Update borrower and status book
             record.book_id.borrower_id = record.borrower_id
-            record.book_id.state = 'borrowed'
+            record.book_id.state = 'borrowing'
 
             return True
 

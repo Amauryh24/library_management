@@ -6,7 +6,8 @@ class LibraryBookCategory(models.Model):
     _name = 'library.book.category'
     _description = 'Library Book Category'
 
-    name = fields.Char(size=30)
+    name = fields.Char(required=True, size=30)
+    color = fields.Integer(string="Color")
 
     # https://www.odoo.com/ro_RO/forum/suport-1/odoo-14-unique-values-but-how-to-prevent-with-spelling-mistakes-182159
     @api.constrains('name')
