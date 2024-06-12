@@ -13,6 +13,8 @@ class LibraryBook(models.Model):
     _description = 'Library Book'
 
     name = fields.Char(string='Title', required=True, size=60)
+    publication_date = fields.Date()
+    pages = fields.Integer(default=0)
     isbn = fields.Char(help='International Standard Book Number', size=17)
     state = fields.Selection(
         selection=[
@@ -21,7 +23,7 @@ class LibraryBook(models.Model):
             ('borrowing', 'Borrowing'),
             ('traveling', 'Traveling'),
             ('lost', 'Lost')
-        ], string='State', default='available')
+        ], string='State', default='available', group_expand='_expand_states')
     color = fields.Integer(string="Color")
 
     owner_id = fields.Many2one('res.users', string="Owner", default=lambda self: self.env.user)
@@ -46,3 +48,6 @@ class LibraryBook(models.Model):
         for record in self:
             record.state = "available"
         return True
+
+    def _expand_states(self, states, domain, order):
+        return [key for key, val in type(self).state.selection]

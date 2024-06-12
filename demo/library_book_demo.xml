@@ -7,6 +7,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_01'/>
+            <field name='publication_date'>1951-05-01</field>
+            <field name='pages'>255</field>
         </record>
         <record id='book_02' model='library.book'>
             <field name='name'>Le cycle de Fondation Tome 2</field>
@@ -14,6 +16,8 @@
             <field name='state'>lost</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_01'/>
+            <field name='publication_date'>1952-10-01</field>
+            <field name='pages'>247</field>
         </record>
         <record id='book_03' model='library.book'>
             <field name='name'>Le cycle de Fondation Tome 3</field>
@@ -21,6 +25,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_01'/>
+            <field name='publication_date'>1953-06-01</field>
+            <field name='pages'>232</field>
         </record>
 
         <!-- Arthur C. Clarke -->
@@ -30,6 +36,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_02'/>
+            <field name='publication_date'>1968-07-01</field>
+            <field name='pages'>297</field>
         </record>
         <record id='book_05' model='library.book'>
             <field name='name'>Rendez-vous avec Rama</field>
@@ -37,6 +45,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_02'/>
+            <field name='publication_date'>1973-07-01</field>
+            <field name='pages'>288</field>
         </record>
         <record id='book_06' model='library.book'>
             <field name='name'>Les Enfants d'Icare</field>
@@ -44,6 +54,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_02'/>
+            <field name='publication_date'>1953-06-01</field>
+            <field name='pages'>224</field>
         </record>
 
         <!-- Philip K. Dick -->
@@ -53,6 +65,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_03'/>
+            <field name='publication_date'>1969-01-01</field>
+            <field name='pages'>224</field>
         </record>
         <record id='book_08' model='library.book'>
             <field name='name'>Le Maître du Haut Château</field>
@@ -60,6 +74,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_03'/>
+            <field name='publication_date'>1962-10-01</field>
+            <field name='pages'>240</field>
         </record>
         <record id='book_09' model='library.book'>
             <field name='name'>Les Androïdes rêvent-ils de moutons électriques ?</field>
@@ -67,6 +83,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_03'/>
+            <field name='publication_date'>1968-01-01</field>
+            <field name='pages'>210</field>
         </record>
 
         <!-- Ray Bradbury -->
@@ -76,6 +94,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_03')])]"/>
             <field name='author_id' ref='library_management.author_04'/>
+            <field name='publication_date'>1953-10-19</field>
+            <field name='pages'>158</field>
         </record>
         <record id='book_11' model='library.book'>
             <field name='name'>Chroniques Martiennes</field>
@@ -83,6 +103,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_04'/>
+            <field name='publication_date'>1950-05-01</field>
+            <field name='pages'>256</field>
         </record>
         <record id='book_12' model='library.book'>
             <field name='name'>L'Homme Illustré</field>
@@ -90,6 +112,8 @@
             <field name='state'>lost</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_04'/>
+            <field name='publication_date'>1951-01-01</field>
+            <field name='pages'>256</field>
         </record>
 
         <!-- H.G. Wells -->
@@ -99,6 +123,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_05'/>
+            <field name='publication_date'>1898-01-01</field>
+            <field name='pages'>287</field>
         </record>
         <record id='book_14' model='library.book'>
             <field name='name'>L'Homme Invisible</field>
@@ -106,6 +132,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_05'/>
+            <field name='publication_date'>1897-01-01</field>
+            <field name='pages'>192</field>
         </record>
         <record id='book_15' model='library.book'>
             <field name='name'>La Machine à explorer le temps</field>
@@ -113,6 +141,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_05'/>
+            <field name='publication_date'>1895-01-01</field>
+            <field name='pages'>84</field>
         </record>
 
         <!-- Jules Verne -->
@@ -122,6 +152,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_10')])]"/>
             <field name='author_id' ref='library_management.author_06'/>
+            <field name='publication_date'>1870-01-01</field>
+            <field name='pages'>672</field>
         </record>
         <record id='book_17' model='library.book'>
             <field name='name'>Le Tour du monde en quatre-vingts jours</field>
@@ -129,6 +161,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_10')])]"/>
             <field name='author_id' ref='library_management.author_06'/>
+            <field name='publication_date'>1873-01-01</field>
+            <field name='pages'>252</field>
         </record>
         <record id='book_18' model='library.book'>
             <field name='name'>Voyage au centre de la Terre</field>
@@ -136,6 +170,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_10')])]"/>
             <field name='author_id' ref='library_management.author_06'/>
+            <field name='publication_date'>1864-01-01</field>
+            <field name='pages'>183</field>
         </record>
 
         <!-- Frank Herbert -->
@@ -145,6 +181,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_07'/>
+            <field name='publication_date'>1965-08-01</field>
+            <field name='pages'>412</field>
         </record>
         <record id='book_20' model='library.book'>
             <field name='name'>Le Messie de Dune</field>
@@ -152,6 +190,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_07'/>
+            <field name='publication_date'>1969-01-01</field>
+            <field name='pages'>256</field>
         </record>
         <record id='book_21' model='library.book'>
             <field name='name'>Les Enfants de Dune</field>
@@ -159,6 +199,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_07'/>
+            <field name='publication_date'>1976-04-01</field>
+            <field name='pages'>444</field>
         </record>
 
         <!-- Robert A. Heinlein -->
@@ -168,6 +210,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_08'/>
+            <field name='publication_date'>1959-11-05</field>
+            <field name='pages'>263</field>
         </record>
         <record id='book_23' model='library.book'>
             <field name='name'>En terre étrangère</field>
@@ -175,6 +219,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_08'/>
+            <field name='publication_date'>1961-06-01</field>
+            <field name='pages'>408</field>
         </record>
         <record id='book_24' model='library.book'>
             <field name='name'>Double étoile</field>
@@ -182,6 +228,8 @@
             <field name='state'>available</field>
             <field name='category_ids' eval="[(6, 0, [ref('category_02')])]"/>
             <field name='author_id' ref='library_management.author_08'/>
+            <field name='publication_date'>1956-03-01</field>
+            <field name='pages'>192</field>
         </record>
     </data>
 </odoo>
