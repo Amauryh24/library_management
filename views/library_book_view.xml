@@ -12,6 +12,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="owner_id" />
+
                 <field name="name"/>
                 <field name="author_id"/>
                 <field name="category_ids"/>
@@ -27,11 +28,12 @@
         <field name="arch" type="xml">
             <tree decoration-success="state == 'available'" decoration-danger="state == 'lost'">
                 <field name="owner_id" />
+                <field name="owner_street"/>
                 <field name="name"/>
                 <field name="author_id"/>
                 <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color'}" />
                 <field name="isbn" optional="hide"/>
-                <field name="state" widget="badge" decoration-muted="state == 'unavailable'" decoration-success="state == 'available'" decoration-danger="state == 'lost'" decoration-info="state in 'borrowing,traveling'"/>
+                <field name="state" widget="badge" decoration-muted="state == 'unavailable'" decoration-success="state == 'available'" decoration-danger="state == 'lost'" decoration-info="state in 'traveling'"/>
             </tree>
         </field>
     </record>
@@ -41,8 +43,9 @@
         <field name="arch" type="xml">
             <form string="Book">
                 <header>
-                    <button name="action_set_available" type="object" string="Available"/>
-                    <field name="state" widget="statusbar" statusbar_visible="unavailable,available,borrowing,traveling,lost" />
+                    <button name="action_set_state" context="{'state' : 'unavailable'}" type="object" string="Unavailable"/>
+                    <button name="action_set_state" context="{'state' : 'lost'}" type="object" string="Lost"/>
+                    <field name="state" widget="statusbar" statusbar_visible="unavailable,available,borrowed,lost" />
                 </header>
                 <sheet>
 
@@ -73,17 +76,12 @@
                                         <tree editable="bottom">
                                             <field name="borrower_id"/>
                                             <field name="borrow_date"/>
-                                            <button name="action_set_status_accepted" string="Accepted" states="draft" type="object" icon="fa-check" invisible="status in 'accepted,refused'"/>
-                                            <button name="action_set_status_refused" string="Refused" states="draft" type="object" icon="fa-times" invisible="status in 'accepted,refused'" />
-                                            <field name="status" />
+                                            <field name="borrower_address"/>
+                                            <button name="action_set_status_accepted" string="Accepted" states="draft" type="object" icon="fa-check"/>
+                                            <button name="action_set_status_onhold" string="On Hold" states="draft" type="object" icon="fa-check"/>
+                                            <button name="action_set_status_refused" string="Refused" states="draft" type="object" icon="fa-times" />
+                                            <field name="status"/>
                                         </tree>
-                                        <form >
-                                            <group>
-                                                <field name="borrower_id"/>
-                                                <field name="borrow_date"/>
-                                                <field name="status"/>
-                                            </group>
-                                        </form>
                                     </field>
                                 </group>
                             </page>

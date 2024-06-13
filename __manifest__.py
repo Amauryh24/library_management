@@ -8,6 +8,7 @@
         'views/library_book_view.xml',
         'views/library_book_category_view.xml',
         'views/library_book_author_view.xml',
+        'views/res_users_view.xml',
         'views/library_menu_view.xml',
     ],
     'demo': [

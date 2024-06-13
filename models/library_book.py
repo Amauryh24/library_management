@@ -2,10 +2,11 @@ from odoo import fields, models, api
 from odoo.exceptions import ValidationError
 
 # Information
-# status.borrowed   -> when another user has the book
-# status.travaling  -> when the book is inside a book box
-# borrower_id       -> The owner accepted to borrow his book
-# borrow_ids        -> The borrowing request
+# status.unavailable    -> The owner doesn't want to borrow the book
+# status.available      -> The book can be borrow
+# status.borrowed       -> The book is borrowed
+# borrower_id           -> The owner accepted to borrow his book
+# borrow_ids            -> The borrowing request
 
 
 class LibraryBook(models.Model):
@@ -20,13 +21,13 @@ class LibraryBook(models.Model):
         selection=[
             ('unavailable', 'Unavailable'),
             ('available', 'Available'),
-            ('borrowing', 'Borrowing'),
-            ('traveling', 'Traveling'),
+            ('borrowed', 'Borrowed'),
             ('lost', 'Lost')
         ], string='State', default='available', group_expand='_expand_states')
     color = fields.Integer(string="Color")
 
-    owner_id = fields.Many2one('res.users', string="Owner", default=lambda self: self.env.user)
+    owner_id = fields.Many2one(comodel_name='res.users', string="Owner", default=lambda self: self.env.user)
+    owner_street = fields.Char(compute="_compute_owner_street")
     borrower_id = fields.Many2one('res.partner', string="Borrower", copy=False, readonly=True)
     category_ids = fields.Many2many('library.book.category')
     author_id = fields.Many2one('library.book.author')
@@ -44,10 +45,15 @@ class LibraryBook(models.Model):
         if not self.isbn.replace('-', '').isdigit():
             raise ValidationError("The ISBN must be only digits.")
 
-    def action_set_available(self):
+    def action_set_state(self):
         for record in self:
-            record.state = "available"
+            record.state = self.env.context.get('state')
         return True
 
     def _expand_states(self, states, domain, order):
         return [key for key, val in type(self).state.selection]
+
+    @api.depends('owner_id')
+    def _compute_owner_street(self):
+        for rec in self:
+            rec.owner_street = rec.owner_id.partner_id.street
