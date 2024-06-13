@@ -10,7 +10,7 @@
                 <notebook position="inside">
                     <page string="Books">
                         <group>
-                            <field name="book_ids" domain="[('state', '=', 'available')]">
+                            <field name="book_ids">
                             </field>
                         </group>
                     </page>
