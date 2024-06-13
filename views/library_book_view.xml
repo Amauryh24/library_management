@@ -27,8 +27,8 @@
         <field name="model">library.book</field>
         <field name="arch" type="xml">
             <tree decoration-success="state == 'available'" decoration-danger="state == 'lost'">
-                <field name="owner_id" />
-                <field name="owner_street"/>
+                <field name="owner_id" optional="hide"/>
+                <field name="owner_street" optional="hide"/>
                 <field name="name"/>
                 <field name="author_id"/>
                 <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color'}" />

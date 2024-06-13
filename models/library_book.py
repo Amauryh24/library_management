@@ -16,7 +16,7 @@ class LibraryBook(models.Model):
     name = fields.Char(string='Title', required=True, size=60)
     publication_date = fields.Date()
     pages = fields.Integer(default=0)
-    isbn = fields.Char(help='International Standard Book Number', size=17)
+    isbn = fields.Char(help='International Standard Book Number', size=17, copy=False)
     state = fields.Selection(
         selection=[
             ('unavailable', 'Unavailable'),
@@ -34,6 +34,7 @@ class LibraryBook(models.Model):
     borrow_ids = fields.One2many('library.book.borrow', 'book_id', string='Borrows')
 
     _sql_constraints = [
+        ('check_pages', 'CHECK(pages > 0)', 'The number of pages must be stricly positive.'),
         ('unique_isbn', 'UNIQUE(isbn)', 'The ISBN must be unique'),
     ]
 
