@@ -1,13 +1,29 @@
-# library_management
+# Library management
 
-Full crud application with python
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
-# Instruction
+Build an application in odoo for the management of books
 
-Clone the repository inside the addon directory of odoo
-run the server odoo :
+## prerequisites [guide](https://www.odoo.com/documentation/17.0/administration/on_premise.html)
+
+- PostgreSQL 12.0
+- Odoo 17
+- python 3.10
+- C++ build tools (Windows)
+
+## Instructions
+
+- Clone the repository inside the addon directory of odoo
+- run the server odoo :
 
 ```
 python .\odoo-bin -r "your_odoo_name" -w "your_pwd" --addons-path=addons -d "odoo-db" -u library_management
 ```
-icon : https://spilymp.github.io/ibo/
+
+## Version
+
+1.0.0
+
+## Licence
+
+- LGPL-3

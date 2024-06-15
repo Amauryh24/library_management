@@ -11,7 +11,6 @@ class LibraryBookAuthor(models.Model):
     name = fields.Char(string="Author Name", required=True, size=60)
     born_date = fields.Date(default=date.today() - relativedelta(years=18))
     image = fields.Image(string="Image", help="Select your image here", max_width=150, max_height=150)
-    # image = fields.Binary(string="Image", help="Select your image here")
 
     @api.constrains('name')
     def _check_unique_name_case_sensitive(self):
