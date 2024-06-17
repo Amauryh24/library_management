@@ -11,14 +11,14 @@ class LibraryBookBorrow(models.Model):
         copy=False)
 
     borrower_id = fields.Many2one('res.partner', string='Borrower', required=True)
-    borrower_address = fields.Char(string="Street", compute="_compute_address")
+    borrower_address = fields.Char(string="Street", related="borrower_id.street")
     book_id = fields.Many2one(comodel_name='library.book')
 
     def action_set_status_accepted(self):
         for record in self:
             record.status = "accepted"
 
-            # One offer can be accepted
+            # Only one book can be borrowed
             self.search([
                 ('book_id', '=', record.book_id.id),
                 ('id', '!=', record.id),
@@ -51,8 +51,3 @@ class LibraryBookBorrow(models.Model):
             self._update_book_state(record.book_id.id)
 
         return True
-
-    @api.depends("borrower_id")
-    def _compute_address(self):
-        for rec in self:
-            rec.borrower_address = rec.borrower_id.street

@@ -76,7 +76,7 @@
                                         <tree editable="bottom">
                                             <field name="borrower_id"/>
                                             <field name="borrow_date"/>
-                                            <field name="borrower_address"/>
+                                            <field name="borrower_address" optional="show"/>
                                             <button name="action_set_status_accepted" string="Accepted" states="draft" type="object" icon="fa-check"/>
                                             <button name="action_set_status_onhold" string="On Hold" states="draft" type="object" icon="fa-check"/>
                                             <button name="action_set_status_refused" string="Refused" states="draft" type="object" icon="fa-times" />

@@ -27,7 +27,7 @@ class LibraryBook(models.Model):
     color = fields.Integer(string="Color")
 
     owner_id = fields.Many2one(comodel_name='res.users', string="Owner", default=lambda self: self.env.user)
-    owner_street = fields.Char(compute="_compute_owner_street")
+    owner_street = fields.Char(related="owner_id.partner_id.street")
     borrower_id = fields.Many2one('res.partner', string="Borrower", copy=False, readonly=True)
     category_ids = fields.Many2many('library.book.category')
     author_id = fields.Many2one('library.book.author')
@@ -53,8 +53,3 @@ class LibraryBook(models.Model):
 
     def _expand_states(self, states, domain, order):
         return [key for key, val in type(self).state.selection]
-
-    @api.depends('owner_id')
-    def _compute_owner_street(self):
-        for rec in self:
-            rec.owner_street = rec.owner_id.partner_id.street
